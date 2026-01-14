@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-lg font-medium">Booking History</h3>
-                        <a href="{{ route('bookings.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <a href="{{ route('bookings.create') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
                             Make New Booking
                         </a>
                     </div>
@@ -59,13 +59,13 @@
                                             {{ $booking->guests }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                            ${{ number_format($booking->total_amount, 2) }}
+                                            {{ number_format($booking->total_amount, 2) }} MAD
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
                                                 @if($booking->status === 'pending') bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
                                                 @elseif($booking->status === 'confirmed') bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
-                                                @elseif($booking->status === 'checked_in') bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                                                @elseif($booking->status === 'checked_in') bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200
                                                 @elseif($booking->status === 'checked_out') bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200
                                                 @else bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
                                                 @endif">
@@ -74,7 +74,7 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             <div class="flex space-x-2">
-                                                <a href="{{ route('bookings.show', $booking) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
+                                                <a href="{{ route('bookings.show', $booking) }}" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300">
                                                     View
                                                 </a>
                                                 @if($booking->canBeCancelled())
@@ -106,7 +106,7 @@
                             <p class="text-gray-500 dark:text-gray-400 mb-4">
                                 You haven't made any bookings yet.
                             </p>
-                            <a href="{{ route('bookings.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('bookings.create') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
                                 Make Your First Booking
                             </a>
                         </div>
@@ -134,7 +134,7 @@
                             Reason for cancellation (optional)
                         </label>
                         <textarea name="cancellation_reason" id="cancellation_reason" rows="3"
-                            class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
                             placeholder="Please provide a reason for cancellation..."></textarea>
                     </div>
 

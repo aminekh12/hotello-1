@@ -13,7 +13,7 @@
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
-                                <svg class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg class="h-8 w-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                             </div>
@@ -87,7 +87,7 @@
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
                         <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">Today's Check-ins</h3>
-                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">{{ $todayCheckIns }}</div>
+                        <div class="text-3xl font-bold text-orange-600 dark:text-orange-400">{{ $todayCheckIns }}</div>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Confirmed bookings checking in today</p>
                     </div>
                 </div>
@@ -108,10 +108,10 @@
                     <div class="flex items-center">
                         <div class="flex-1">
                             <div class="bg-gray-200 dark:bg-gray-700 rounded-full h-4">
-                                <div class="bg-blue-600 h-4 rounded-full" style="width: {{ $occupancyRate }}%"></div>
+                                <div class="bg-orange-600 h-4 rounded-full" style="width: {{ $occupancyRate }}%"></div>
                             </div>
                         </div>
-                        <div class="ml-4 text-2xl font-bold text-blue-600 dark:text-blue-400">{{ number_format($occupancyRate, 1) }}%</div>
+                        <div class="ml-4 text-2xl font-bold text-orange-600 dark:text-orange-400">{{ number_format($occupancyRate, 1) }}%</div>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                 <div class="p-6">
                     <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">Quick Actions</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="{{ route('admin.bookings.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded text-center">
+                        <a href="{{ route('admin.bookings.create') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded text-center">
                             Create Booking
                         </a>
                         <a href="{{ route('admin.users.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded text-center">
@@ -136,7 +136,7 @@
                         <a href="{{ route('admin.bookings.index') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded text-center">
                             View All Bookings
                         </a>
-                        <a href="{{ route('admin.reports.index') }}" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded text-center">
+                        <a href="{{ route('admin.reports.index') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded text-center">
                             Generate Reports
                         </a>
                         <a href="{{ route('admin.users.index') }}" class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded text-center">
@@ -151,7 +151,7 @@
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Recent Bookings</h3>
-                        <a href="{{ route('admin.bookings.index') }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">View All</a>
+                        <a href="{{ route('admin.bookings.index') }}" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300">View All</a>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -175,7 +175,7 @@
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
                                             @if($booking->status === 'pending') bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
                                             @elseif($booking->status === 'confirmed') bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
-                                            @elseif($booking->status === 'checked_in') bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                                            @elseif($booking->status === 'checked_in') bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200
                                             @elseif($booking->status === 'checked_out') bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200
                                             @else bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
                                             @endif">

@@ -5,7 +5,7 @@
                 {{ $hotel->name }}
             </h2>
             <div class="flex space-x-2">
-                <a href="{{ route('admin.hotels.edit', $hotel) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ route('admin.hotels.edit', $hotel) }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
                     Edit Hotel
                 </a>
                 <a href="{{ route('admin.hotels.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
@@ -82,7 +82,7 @@
                                 @if($hotel->website)
                                 <div>
                                     <span class="font-medium">Website:</span>
-                                    <a href="{{ $hotel->website }}" target="_blank" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">{{ $hotel->website }}</a>
+                                    <a href="{{ $hotel->website }}" target="_blank" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300">{{ $hotel->website }}</a>
                                 </div>
                                 @endif
                             </div>
@@ -95,7 +95,7 @@
                         <h3 class="text-lg font-medium mb-4">Amenities</h3>
                         <div class="flex flex-wrap gap-2">
                             @foreach($hotel->amenities as $amenity)
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm rounded-full">
+                                <span class="px-3 py-1 bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-sm rounded-full">
                                     {{ $amenity }}
                                 </span>
                             @endforeach
@@ -114,7 +114,7 @@
                             <button onclick="toggleRoomForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                                 Add New Room
                             </button>
-                            <button onclick="toggleAssignForm()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <button onclick="toggleAssignForm()" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
                                 Assign Existing Room
                             </button>
                         </div>
@@ -129,7 +129,7 @@
                                 <div>
                                     <label for="room_category_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Room Category</label>
                                     <select name="room_category_id" id="room_category_id" required
-                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                         <option value="">Select Category</option>
                                         @foreach($roomCategories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -139,27 +139,27 @@
                                 <div>
                                     <label for="room_number" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Room Number</label>
                                     <input type="text" name="room_number" id="room_number" required
-                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                 </div>
                                 <div>
                                     <label for="floor" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Floor</label>
                                     <input type="number" name="floor" id="floor" min="1" required
-                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                 </div>
                                 <div>
                                     <label for="price_per_night" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Price per Night</label>
                                     <input type="number" name="price_per_night" id="price_per_night" step="0.01" min="0" required
-                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                 </div>
                                 <div>
                                     <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
                                     <input type="text" name="description" id="description"
-                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                 </div>
                                 <div class="flex items-center">
                                     <label class="flex items-center">
                                         <input type="checkbox" name="is_available" value="1" checked
-                                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-orange-500 focus:ring-orange-500">
                                         <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Available</span>
                                     </label>
                                 </div>
@@ -184,7 +184,7 @@
                                 <div>
                                     <label for="room_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Select Room</label>
                                     <select name="room_id" id="room_id" required
-                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                         <option value="">Select Room</option>
                                         @php
                                             $unassignedRooms = \App\Models\Room::whereNull('hotel_id')->active()->get();
@@ -199,7 +199,7 @@
                                 <button type="button" onclick="toggleAssignForm()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
                                     Cancel
                                 </button>
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button type="submit" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
                                     Assign Room
                                 </button>
                             </div>
@@ -225,7 +225,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">{{ $room->room_number }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $room->roomCategory->name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $room->floor }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${{ number_format($room->price_per_night, 2) }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ number_format($room->price_per_night, 2) }} MAD</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex flex-col space-y-1">
                                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
@@ -235,7 +235,7 @@
                                                 {{ $room->is_active ? 'Active' : 'Inactive' }}
                                             </span>
                                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
-                                                @if($room->is_available) bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                                                @if($room->is_available) bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200
                                                 @else bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200
                                                 @endif">
                                                 {{ $room->is_available ? 'Available' : 'Occupied' }}

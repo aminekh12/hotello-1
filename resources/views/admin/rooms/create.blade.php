@@ -25,7 +25,7 @@
                                     <option value="">Select a category</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ old('room_category_id') == $category->id ? 'selected' : '' }}>
-                                            {{ $category->name }} - ${{ number_format($category->base_price, 2) }}/night
+                                            {{ $category->name }} - {{ number_format($category->base_price, 2) }} MAD/night
                                         </option>
                                     @endforeach
                                 </select>

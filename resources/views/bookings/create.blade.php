@@ -53,7 +53,7 @@
                                                                     <p class="text-sm text-gray-500 dark:text-gray-400">Floor {{ $room->floor }} • Up to {{ $room->roomCategory->max_occupancy }} guests</p>
                                                                 </div>
                                                                 <div class="text-right">
-                                                                    <p class="text-xl font-bold text-blue-600 dark:text-blue-400">${{ number_format($room->price_per_night, 2) }}</p>
+                                                                    <p class="text-xl font-bold text-blue-600 dark:text-blue-400">{{ number_format($room->price_per_night, 2) }} MAD</p>
                                                                     <p class="text-sm text-gray-500 dark:text-gray-400">per night</p>
                                                                 </div>
                                                             </div>

@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-gray-600 dark:text-gray-400">Price per Night:</span>
-                                    <span class="font-medium text-gray-900 dark:text-gray-100">${{ number_format($booking->room->price_per_night, 2) }}</span>
+                                    <span class="font-medium text-gray-900 dark:text-gray-100">{{ number_format($booking->room->price_per_night, 2) }} MAD</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-gray-600 dark:text-gray-400">Max Occupancy:</span>
@@ -147,15 +147,15 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="flex justify-between">
                                 <span class="text-gray-600 dark:text-gray-400">Total Amount:</span>
-                                <span class="font-medium text-gray-900 dark:text-gray-100">${{ number_format($booking->total_amount, 2) }}</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">{{ number_format($booking->total_amount, 2) }} MAD</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600 dark:text-gray-400">Paid Amount:</span>
-                                <span class="font-medium text-gray-900 dark:text-gray-100">${{ number_format($booking->paid_amount, 2) }}</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">{{ number_format($booking->paid_amount, 2) }} MAD</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600 dark:text-gray-400">Remaining Amount:</span>
-                                <span class="font-medium text-gray-900 dark:text-gray-100">${{ number_format($booking->remaining_amount, 2) }}</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">{{ number_format($booking->remaining_amount, 2) }} MAD</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600 dark:text-gray-400">Payment Status:</span>

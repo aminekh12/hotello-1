@@ -92,7 +92,7 @@
                                                 <div>
                                                     <span class="font-medium text-gray-700 dark:text-gray-300">Website:</span>
                                                     <p class="text-gray-600 dark:text-gray-400">
-                                                        <a href="{{ $room->hotel->website }}" target="_blank" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
+                                                        <a href="{{ $room->hotel->website }}" target="_blank" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300">
                                                             {{ $room->hotel->website }}
                                                         </a>
                                                     </p>
@@ -105,7 +105,7 @@
                                                 <span class="font-medium text-gray-700 dark:text-gray-300">Hotel Amenities:</span>
                                                 <div class="flex flex-wrap gap-2 mt-2">
                                                     @foreach($room->hotel->amenities as $amenity)
-                                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs rounded">
+                                                        <span class="px-2 py-1 bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-xs rounded">
                                                             {{ $amenity }}
                                                         </span>
                                                     @endforeach
@@ -125,7 +125,7 @@
                         <div class="p-6 text-gray-900 dark:text-gray-100">
                             <div class="text-center mb-6">
                                 <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                                    ${{ number_format($room->price_per_night, 2) }}
+                                    {{ number_format($room->price_per_night, 2) }} MAD
                                 </div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">per night</div>
                             </div>
@@ -139,7 +139,7 @@
                                     <input type="date" name="check_in_date" id="check_in_date"
                                         value="{{ request('check_in_date') }}"
                                         min="{{ date('Y-m-d') }}" required
-                                        class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                 </div>
 
                                 <div>
@@ -147,20 +147,20 @@
                                     <input type="date" name="check_out_date" id="check_out_date"
                                         value="{{ request('check_out_date') }}"
                                         min="{{ date('Y-m-d', strtotime('+1 day')) }}" required
-                                        class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                 </div>
 
                                 <div>
                                     <label for="guests" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number of Guests</label>
                                     <select name="guests" id="guests" required
-                                        class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                         @for($i = 1; $i <= $room->roomCategory->max_occupancy; $i++)
                                             <option value="{{ $i }}" {{ request('guests') == $i ? 'selected' : '' }}>{{ $i }} {{ $i == 1 ? 'Guest' : 'Guests' }}</option>
                                         @endfor
                                     </select>
                                 </div>
 
-                                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
+                                <button type="submit" class="w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded">
                                     Book This Room
                                 </button>
                             </form>
@@ -197,8 +197,8 @@
                                         <div class="p-3">
                                             <h4 class="font-medium text-gray-900 dark:text-gray-100">{{ $similarRoom->room_number }}</h4>
                                             <p class="text-sm text-gray-600 dark:text-gray-400">{{ $similarRoom->roomCategory->name }}</p>
-                                            <p class="text-sm font-medium text-gray-900 dark:text-gray-100">${{ number_format($similarRoom->price_per_night, 2) }}/night</p>
-                                            <a href="{{ route('rooms.show', $similarRoom) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 text-sm">
+                                            <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ number_format($similarRoom->price_per_night, 2) }} MAD/night</p>
+                                            <a href="{{ route('rooms.show', $similarRoom) }}" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300 text-sm">
                                                 View Details
                                             </a>
                                         </div>

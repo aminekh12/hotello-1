@@ -18,7 +18,7 @@
                                 <input type="date" name="check_in_date" id="check_in_date"
                                     value="{{ request('check_in_date') }}"
                                     min="{{ date('Y-m-d') }}" required
-                                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                             </div>
 
                             <!-- Check-out Date -->
@@ -27,14 +27,14 @@
                                 <input type="date" name="check_out_date" id="check_out_date"
                                     value="{{ request('check_out_date') }}"
                                     min="{{ date('Y-m-d', strtotime('+1 day')) }}" required
-                                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                             </div>
 
                             <!-- Number of Guests -->
                             <div>
                                 <label for="guests" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Number of Guests</label>
                                 <select name="guests" id="guests" required
-                                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-orange-500 focus:ring-orange-500 sm:text-sm">
                                     @for($i = 1; $i <= 8; $i++)
                                         <option value="{{ $i }}" {{ request('guests') == $i ? 'selected' : '' }}>{{ $i }} {{ $i == 1 ? 'Guest' : 'Guests' }}</option>
                                     @endfor
@@ -43,7 +43,7 @@
 
                             <!-- Search Button -->
                             <div class="flex items-end">
-                                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button type="submit" class="w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
                                     Search Rooms
                                 </button>
                             </div>
@@ -109,7 +109,7 @@
                                                     Max {{ $room->roomCategory->max_occupancy }} guests
                                                 </div>
                                                 <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
-                                                    ${{ number_format($room->price_per_night, 2) }}/night
+                                                    {{ number_format($room->price_per_night, 2) }} MAD/night
                                                 </div>
                                             </div>
 
@@ -118,7 +118,7 @@
                                                 <div class="mb-3">
                                                     <div class="flex flex-wrap gap-1">
                                                         @foreach(array_slice($room->roomCategory->amenities, 0, 3) as $amenity)
-                                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs rounded">
+                                                            <span class="px-2 py-1 bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-xs rounded">
                                                                 {{ $amenity }}
                                                             </span>
                                                         @endforeach
@@ -143,7 +143,7 @@
                                                     'check_out_date' => $checkOut,
                                                     'guests' => $guests
                                                 ]) }}"
-                                                   class="flex-1 bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded text-sm">
+                                                   class="flex-1 bg-orange-500 hover:bg-orange-700 text-white text-center font-bold py-2 px-4 rounded text-sm">
                                                     Book Now
                                                 </a>
                                             </div>
@@ -162,7 +162,7 @@
                                 <p class="text-gray-500 dark:text-gray-400 mb-4">
                                     Sorry, no rooms are available for your selected dates and guest count.
                                 </p>
-                                <a href="{{ route('rooms.index') }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
+                                <a href="{{ route('rooms.index') }}" class="text-orange-600 hover:text-orange-900 dark:text-orange-400 dark:hover:text-orange-300">
                                     Browse all rooms
                                 </a>
                             </div>
